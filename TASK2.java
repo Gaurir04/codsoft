@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class ATM_Transaction
+public class TASK2
 {
     public static void main(String args[] )
     {
