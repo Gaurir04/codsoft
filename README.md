@@ -1,2 +1,2 @@
 # CODSOFT
-Java Programming internship at cipherbytetech
+Java Programming internship at codsoft
