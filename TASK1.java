@@ -1,77 +1,50 @@
-// Java program for the above approach
-import java.util.Scanner;
+//student grade project for codsoft
 
-public class TASK1 {
+import java.util.*;
 
-    // Function that implements the
-    // number guessing game
-    public static void
-    guessingNumberGame()
-    {
-        // Scanner Class
+public class student_grade {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        // Generate the numbers
-        int number = 1 + (int)(100
-                * Math.random());
+        System.out.println("enter student name:");
+        String name = sc.next();
 
-        // Given K trials
-        int K = 5;
+        System.out.println("enter how many subject you have:");
+        float no_sub = sc.nextInt();
 
-        int i, guess;
+        int marks = 0, sum = 0;
+        String grade;
+        for (int i = 1; i <= no_sub; i++) {
+            System.out.println("enter the subject marks out of 100:");
+            marks = sc.nextInt();
+            sum += marks;
+            System.out.println("total marks:" + sum);
 
-        System.out.println(
-                "A number is chosen"
-                        + " between 1 to 100."
-                        + "Guess the number"
-                        + " within 5 trials.");
-
-        // Iterate over K Trials
-        for (i = 0; i < K; i++) {
-
-            System.out.println(
-                    "Guess the number:");
-
-            // Take input for guessing
-            guess = sc.nextInt();
-
-            // If the number is guessed
-            if (number == guess) {
-                System.out.println(
-                        "Congratulations!"
-                                + " You guessed the number.");
-                break;
-            }
-            else if (number > guess
-                    && i != K - 1) {
-                System.out.println(
-                        "The number is "
-                                + "greater than " + guess);
-            }
-            else if (number < guess
-                    && i != K - 1) {
-                System.out.println(
-                        "The number is"
-                                + " less than " + guess);
-            }
         }
 
-        if (i == K) {
-            System.out.println(
-                    "You have exhausted"
-                            + " K trials.");
+         double avg= (sum/no_sub);
+        System.out.println("the average percentage is:"+avg);
 
-            System.out.println(
-                    "The number was " + number);
+        if(avg<=100 && avg >=75){
+            grade = "A";
+            System.out.println("your grade is:"+grade);
         }
-    }
+        else if(avg <=74 && avg >=65){
+            grade = "B";
+            System.out.println("your grade is:"+grade);
+        }
+        else if(avg <=64 && avg >=45){
+            grade = "C";
+            System.out.println("your grade is:"+grade);
+        }
+        else if(avg <=44){
+            grade = "D";
+            System.out.println("your grade is:"+grade);
+        }
+        else{
+            System.out.println("you are failed!!!");
+        }
 
-    // Driver Code
-    public static void
-    main(String arg[])
-    {
 
-        // Function Call
-        guessingNumberGame();
     }
 }
